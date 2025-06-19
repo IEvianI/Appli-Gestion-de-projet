@@ -28,3 +28,15 @@ export const PROJECT_STATUS_CLASS_MAP = {
     moyenne: "Moyenne",
     élevée: "Élevée",
   };
+
+  export const USER_STATUS_CLASS_MAP = {
+  active: 'text-green-600 bg-green-100',
+  inactive: 'text-gray-600 bg-gray-100',
+  banned: 'text-red-600 bg-red-100',
+}
+
+export const USER_STATUS_TEXT_MAP = {
+  active: 'Actif',
+  inactive: 'Inactif',
+  banned: 'Banni',
+}

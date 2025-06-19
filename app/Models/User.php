@@ -45,4 +45,10 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }
+
+    public const STATUSES = [
+        'active'   => 'Actif',
+        'inactive' => 'Inactif',
+        'banned'   => 'Banni',
+    ];
 }
