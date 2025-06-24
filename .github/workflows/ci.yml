@@ -3,9 +3,9 @@ name: 🧪 CI with MySQL
 
 on:
   push:
-    branches: [ main ]
+    branches: [ ci-cd-docker ]
   pull_request:
-    branches: [ main ]
+    branches: [ ci-cd-docker ]
 
 jobs:
   tests:
