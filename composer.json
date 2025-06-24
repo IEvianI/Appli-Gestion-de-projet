@@ -40,9 +40,7 @@
     },
     "scripts": {
         "test": [
-      "mkdir -p public/build",
-      "echo '{}' > public/build/manifest.json",
-      "php artisan test --env=testing"
+      "php artisan test"
     ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
