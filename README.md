@@ -34,3 +34,43 @@ docker compose up --build -d
 
 # 3. Accéder à l’app en local
 http://localhost:8080
+
+```
+
+## ⚙️ Scripts utiles
+
+```bash
+# Lancer les tests
+composer test
+
+# Lancer Laravel en local (hors Docker)
+php artisan serve
+```
+
+## 🧪 Intégration Continue
+
+Ce projet utilise GitHub Actions pour exécuter automatiquement :
+- **Les migrations**
+- **Les tests automatisés**
+- **La vérification du code via PHPStan**
+
+Fichier CI utilisé : .github/workflows/ci.yml
+
+## 📁 Fonctionnalités
+
+- Création et gestion de projets
+- Ajout de tâches et suivi d’avancement
+- Authentification des utilisateurs
+- Modification du profil
+- Interface intuitive et responsive
+
+## 🔐 Sécurité
+
+- Validation des entrées
+- Hashing des mots de passe
+- Utilisation de tokens CSRF
+- Configuration d’environnement testing pour les tests
+
+## 👨‍💻 Auteur
+Evan ALLAIN
+Projet réalisé dans le cadre de la formation MyDigitalSchool
