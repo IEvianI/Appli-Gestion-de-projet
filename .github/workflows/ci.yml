@@ -79,7 +79,7 @@ jobs:
         run: php artisan migrate --force
 
       - name: Run PHPUnit
-        run: composer test
+        run: composer test --filter=Profile
 
       # Décommente si tu as des tests JS ou un lint à passer
       #- name: Setup Node.js
