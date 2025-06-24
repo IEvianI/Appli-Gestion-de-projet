@@ -1,0 +1,46 @@
+# docker-compose.yml
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html
+    environment:
+      APP_ENV: testing
+      APP_DEBUG: "true"
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: "task-flow-db"
+      DB_USERNAME: "task-flow-usr"
+      DB_PASSWORD: "oxOyzEFe6zXbPhcG0oGB"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "oxOyzEFe6zXbPhcG0oGB"
+      MYSQL_DATABASE: "task-flow-db"
+      MYSQL_USER: "task-flow-usr"
+      MYSQL_PASSWORD: "oxOyzEFe6zXbPhcG0oGB"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  web:
+    image: nginx:stable-alpine
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+
+volumes:
+  dbdata:

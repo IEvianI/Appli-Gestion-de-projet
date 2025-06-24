@@ -1,0 +1,16 @@
+# phpstan.neon.dist
+includes:
+    - vendor/nunomaduro/larastan/extension.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon  # si installé
+
+parameters:
+    level: 2                # de 0 (le plus permissif) à 8 (le plus strict)
+    paths:
+        - app
+        - routes
+        - database/factories
+        - database/seeders
+    bootstrapFiles:
+        - %rootDir%/../../../vendor/autoload.php
+    excludePaths:
+        - tests/*
